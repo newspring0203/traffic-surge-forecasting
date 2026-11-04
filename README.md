@@ -54,9 +54,9 @@ $G$는 전체 표본, 급증 표본, 비반복 급증 표본 중 하나입니다
 |---|---|---|
 | 릿지 | $\hat{y} = b + w^\top u$에 $\lambda \lVert w \rVert_2^2$ 규제를 적용합니다. | 상관된 시차 입력을 선형으로 결합했을 때의 기준 성능을 확인합니다. |
 | XGBoost | $\hat{y} = b + \eta \sum_{k=1}^{K} f_k(u)$로 트리의 출력을 더합니다. | 입력의 값과 조합에 따라 다른 예측 규칙을 학습합니다. |
-| MLP | $\hat{y} = W_2 \operatorname{ReLU}(W_1u + b_1) + b_2$로 계산합니다. | 고정된 위치의 시차 입력을 비선형 함수로 결합하는 효과를 확인합니다. |
+| MLP | $\hat{y} = W_2 \mathrm{ReLU}(W_1u + b_1) + b_2$로 계산합니다. | 고정된 위치의 시차 입력을 비선형 함수로 결합하는 효과를 확인합니다. |
 | LSTM | $c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t$로 상태를 갱신합니다. | 최근 관측을 시간순으로 읽으며 어떤 정보를 유지할지 학습합니다. |
-| Transformer | $\operatorname{softmax}(QK^\top / \sqrt{d_k}) V$로 시점별 표현을 결합합니다. | 관측 창 안에서 어떤 시점의 정보를 참조할지 학습합니다. |
+| Transformer | $\mathrm{softmax}(QK^\top / \sqrt{d_k}) V$로 시점별 표현을 결합합니다. | 관측 창 안에서 어떤 시점의 정보를 참조할지 학습합니다. |
 
 ### XGBoost 학습 가중치
 
